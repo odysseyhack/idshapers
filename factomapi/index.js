@@ -19,6 +19,7 @@ app.get('/listAllEntries', function (req, res) {
         res.send([]);
         return;
     }
+
     for(var i = 0; i < chainIntegrator.entryHashes.length; i++) {
      cli.getEntry(chainIntegrator.entryHashes[i]).then((result) => {
         console.log(result.extIds.toString('utf8'));
@@ -28,14 +29,14 @@ app.get('/listAllEntries', function (req, res) {
        });
     } 
 
-    (function wait() {
+    function wait() {
         if (allEntries.length == chainIntegrator.entryHashes.length) {
             res.send(allEntries);
         } else {
             setTimeout( wait, 500 );
         }
-    })();
-    
+    }
+    wait();
 });
 
 var server = app.listen(8081, function () {
