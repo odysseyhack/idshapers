@@ -50,6 +50,10 @@ app.get('/addEntry/:key/:did', function (req, res) {
 
 app.get('/listAllEntries', function (req, res) {
     var allEntries = [];
+    if(entryHashes.length == 0) {
+        res.send([]);
+        return;
+    }
     for(var i = 0; i < entryHashes.length; i++) {
      cli.getEntry(entryHashes[i]).then((result) => {
         console.log(result.extIds.toString('utf8'));
