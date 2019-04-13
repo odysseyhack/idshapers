@@ -1,0 +1,42 @@
+{
+  "name": "idshapersdemo",
+  "version": "0.0.1",
+  "private": true,
+  "homepage": "https://github.com/idshapers",
+  "repository": "https://github.com/idshapers/mvp",
+  "devDependencies": {
+    "cloudfront-invalidate-cache": "^1.0.1",
+    "react-scripts": "1.1.4",
+    "s3-deploy": "^1.2.1"
+  },
+  "dependencies": {
+    "dayjs": "^1.8.0",
+    "localforage": "^1.7.3",
+    "mobile-detect": "^1.4.3",
+    "qr-image": "^3.2.0",
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
+    "react-redux": "5.0.7",
+    "react-router": "4.3.1",
+    "react-router-dom": "4.3.1",
+    "react-tooltip": "^3.9.2",
+    "react-webcam": "^1.1.1",
+    "redux": "4.0.0",
+    "redux-saga": "0.16.0",
+    "reselect": "3.0.1",
+    "shortid": "2.2.12",
+    "styled-components": "4.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "create-did": "node node_scripts/create_did.js",
+    "s3-upload": "node_modules/.bin/s3-deploy './build/**' './build/.well-known/**' --cwd './build/' --region us-west-2 --bucket",
+    "deploy:stage": "npm run build; npm run create-did stage; npm run s3-upload cleverland-stage && npm run invalidate demo.stage.idshapers.com",
+    "deploy:production": "npm run build; npm run create-did production; npm run s3-upload cleverland-prod && npm run invalidate demo.idshapers.com",
+    "invalidate": "node_modules/.bin/cloudfront-invalidate-cache --cname"
+  }
+}
