@@ -1,0 +1,13 @@
+version: '2'
+services:
+
+  demo:
+    build:
+      context: ./demo
+      dockerfile: Dockerfile
+    container_name: demo
+    ports:
+    - 3000:3000
+    volumes:
+    - ./demo:/home/demo:rw
+    - /home/demo/node_modules
