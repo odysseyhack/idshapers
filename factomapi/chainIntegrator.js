@@ -36,3 +36,11 @@ exports.addEntry = function(key, value) {
     return myEntry.hashHex;
 }
 
+exports.wait = function(allEntries) {
+    if (allEntries.length == exports.entryHashes.length) {
+        res.send(allEntries);
+    } else {
+        setTimeout( wait, 500 );
+    }
+}
+

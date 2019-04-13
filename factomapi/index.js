@@ -29,14 +29,7 @@ app.get('/listAllEntries', function (req, res) {
        });
     } 
 
-    function wait() {
-        if (allEntries.length == chainIntegrator.entryHashes.length) {
-            res.send(allEntries);
-        } else {
-            setTimeout( wait, 500 );
-        }
-    }
-    wait();
+    chainIntegrator.wait(allEntries);
 });
 
 var server = app.listen(8081, function () {
