@@ -75,7 +75,7 @@ class Landing extends React.Component {
         <h1>Data revoked.</h1><br/><h2>Your data is deleted from all 3-rd parties.</h2>
         <br/>
         <img src={dataSharedImage} alt="datashare"/>
-         <br/><br/><CapsuleLinkButton onClick="onClickButton" to="/sharepermissions/flights">Home</CapsuleLinkButton><br/><br/><br/>
+         <br/><br/><CapsuleLinkButton onClick="onClickButton" to="/enrollment/flights">Home</CapsuleLinkButton><br/><br/><br/>
       </Hero.Welcome>
           
     </Wrapper>)

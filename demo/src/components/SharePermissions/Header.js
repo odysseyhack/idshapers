@@ -37,7 +37,7 @@ class Header extends React.Component {
               <DataShareImage>
       <img src={dataShareImage} alt="datashare"/>
       </DataShareImage>
-         <br/><br/><CapsuleLinkButton onClick="onClickButton" to="/sharepermissions/flights">Agree</CapsuleLinkButton><br/><br/><br/>
+         <br/><br/><CapsuleLinkButton onClick="onClickButton" to="/enrollment/flights">Agree</CapsuleLinkButton><br/><br/><br/>
       </Hero.Welcome>);
   }
 }

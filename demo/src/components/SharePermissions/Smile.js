@@ -75,7 +75,7 @@ class Landing extends React.Component {
         <h1>Data shared.</h1><br/><h2>Please proceed to the Airport for Happy Passenger flow.</h2>
         <br/>
         <img src={dataSharedImage} alt="datashare"/>
-         <br/><br/><CapsuleLinkButton onClick="onClickButton" to="/sharepermissions/flights">Continue</CapsuleLinkButton><br/><br/><br/>
+         <br/><br/><CapsuleLinkButton onClick="onClickButton" to="/enrollment/flights">Continue</CapsuleLinkButton><br/><br/><br/>
       </Hero.Welcome>
           
     </Wrapper>)
