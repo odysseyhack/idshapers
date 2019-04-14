@@ -1,5 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import {
+    SubmitPersonalDataToKLMService,
+    SelfiePhotoClaim,
+    FacePrintClaim,
+    DocumentPhotoClaim,
+} from "../../sagas/klmVerificationService";
 
 import { large, medium, mediumOnly } from "../shared/grid";
 
@@ -59,7 +65,17 @@ class Landing extends React.Component {
       attestationModal: true
     });
   }
+
   render() {
+      let passengerGeneratedClaims = [
+            SelfiePhotoClaim,
+            FacePrintClaim,
+            DocumentPhotoClaim
+        ]
+  let passengerDid = "did:uport:0x1725342516273a3aa28888800123"
+  let klmVerifiedClaims = SubmitPersonalDataToKLMService(passengerDid, passengerGeneratedClaims)
+  let claim = JSON.stringify(klmVerifiedClaims[1], null,2);
+
     const { attestationModal } = this.state;
     const { cityIdClaim, isLoggedIn, verification, redirectToDiplomaReceived } = this.props;
     // if(!isLoggedIn || !isValid(cityIdClaim).valid)
@@ -81,6 +97,10 @@ class Landing extends React.Component {
       <Hero.Welcome>
         <br/><br/>
         <h1>Camera BackOffice</h1><br/><h2>Camera data received!</h2>
+        <br/>
+        <textarea>
+        {claim}
+        </textarea>
         <br/>
         <img src={dataSharedImage} alt="datashare"/>
 
@@ -154,6 +174,20 @@ Hero.Welcome = styled.div`
     text-transform: uppercase;
     ${medium("font-size: 1.5rem;")}
   }
+
+  textarea {
+    width: 360px;
+    height: 200px;
+    outline: none;
+    min-height: 20px;
+    padding: 0;
+    box-shadow: none;
+    display: block;
+    border: 2px solid black;
+    overflow: hidden;  // Removes scrollbar
+    transition: height 0.2s ease;
+  }
+
   h1 {
     font-size: 2rem;
     font-weight: bold;

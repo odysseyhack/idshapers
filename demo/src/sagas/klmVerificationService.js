@@ -13,7 +13,7 @@ let signClaim = function(claim) {
     //console.log("Issuer: " + decodedClaim.payload.iss)
 
     //return claimJWT
-    return "0x000KLM000SIGNATURE000000000000"
+    return "0x9jK3jdu3u1k3m14njdqq112312126"
 }
 
 let approveProperty = function(property, passengerDid) {
@@ -91,7 +91,7 @@ export var SelfiePhotoClaim = {
 
 export var FacePrintClaim = {
     type: "facePrint",
-    value: "0FFFAFAFFFFFFFFFFFFFFFFF",
+    value: "1110000011111000111111101111011011110010111011001111110011110100",
 }
 
 export var DocumentPhotoClaim = {
