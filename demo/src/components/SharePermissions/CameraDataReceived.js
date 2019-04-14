@@ -30,12 +30,20 @@ class Landing extends React.Component {
       attestationModal: false
     };
   }
+
+  dataVerified() {
+    window.location = "/sharepermissions/cameradataverified";
+  }
+
   componentDidMount() {
     // if(!this.props.isLoggedIn) {
     //   this.props.redirectToDiplomaHome();
     // } else if(!isValid(this.props.cityIdClaim).valid) {
     //   this.props.redirectToDiplomaRequirement();
     // }
+    setTimeout(function () {
+      window.location = "/sharepermissions/cameradataverified";
+    }, 7000);
   }
   onClickButton () {
     window.location.reload()

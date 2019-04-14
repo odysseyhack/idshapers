@@ -37,6 +37,12 @@ class Landing extends React.Component {
     //   this.props.redirectToDiplomaRequirement();
     // }
   }
+
+
+  dataReceived() {
+    window.location = "/sharepermissions/cameradatareceived";
+  }
+
   onClickButton () {
     window.location.reload()
   }

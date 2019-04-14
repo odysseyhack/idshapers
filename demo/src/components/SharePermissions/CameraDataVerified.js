@@ -31,13 +31,19 @@ class Landing extends React.Component {
       attestationModal: false
     };
   }
+
+
   componentDidMount() {
     // if(!this.props.isLoggedIn) {
     //   this.props.redirectToDiplomaHome();
     // } else if(!isValid(this.props.cityIdClaim).valid) {
     //   this.props.redirectToDiplomaRequirement();
     // }
+    setTimeout(function () {
+      window.location = "/sharepermissions/cameradatascan";
+    }, 8000);
   }
+
   onClickButton () {
     window.location.reload()
   }
@@ -73,7 +79,7 @@ class Landing extends React.Component {
     return (<Wrapper>
       <Hero.Welcome>
         <br/><br/>
-        <h1>Camera BackOffice</h1><br/><h2>Data and claims verified!</h2>
+        <h1>Camera BackOffice</h1><br/><h3>Data verified on KLM DID found on</h3> <h2>FACTOM blockchain</h2>
          <img src={dataSharedImage} alt="datashare"/><br/>
          <img src={dataSharedaImage} alt="datashare"/>
         <br/>
