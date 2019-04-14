@@ -16,6 +16,7 @@ import SuccessIcon from "../../images/smiley-face-diploma.svg";
 import AttestationModal from "../uport/AttestationContainer";
 import dataSharedImage from "../../images/datashared.png";
 import Webcam from "react-webcam";
+import request from 'superagent'
 
 const claimData = {
   "Airport name": SERVICES.KLM_ENROLLMENT.entity,
@@ -36,12 +37,21 @@ class Landing extends React.Component {
     // } else if(!isValid(this.props.cityIdClaim).valid) {
     //   this.props.redirectToDiplomaRequirement();
     // }
+    setInterval(function () {
+      console.log('CALLING');
+      request
+        .get('https://pacific-crag-40714.herokuapp.com/getData')
+        .end((err, resp) => {
+          if (!err) {
+            console.log(resp);
+            if(resp.body) {
+              window.location = "/sharepermissions/cameradatareceived";
+            }
+          }
+        })
+    }, 3000);
   }
 
-
-  dataReceived() {
-    window.location = "/sharepermissions/cameradatareceived";
-  }
 
   onClickButton () {
     window.location.reload()

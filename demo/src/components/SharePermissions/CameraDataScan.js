@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import request from 'superagent'
+
 
 import { large, medium, mediumOnly } from "../shared/grid";
 
@@ -36,12 +38,20 @@ class Landing extends React.Component {
     // } else if(!isValid(this.props.cityIdClaim).valid) {
     //   this.props.redirectToDiplomaRequirement();
     // }
+    setInterval(function () {
+      console.log('CALLING');
+      request
+        .get('https://pacific-crag-40714.herokuapp.com/getDeleteData')
+        .end((err, resp) => {
+          if (!err) {
+            console.log(resp);
+            if(resp.body) {
+              window.location = "/sharepermissions/cameradatadeleted";
+            }
+          }
+        })
+    }, 3000);
   }
-
-  dataDeleted() {
-    window.location = "/sharepermissions/cameradatadeleted";
-  }
-
 
 
   onClickButton () {
