@@ -12,6 +12,13 @@ import servicesIcon from "../../images/services-icon.svg";
 import history from "../../utils/history";
 import dataShareImage from "../../images/datashare.png";
 
+import {
+  SubmitPersonalDataToKLMService,
+  SelfiePhotoClaim,
+  FacePrintClaim,
+  DocumentPhotoClaim,
+} from "../../sagas/klmVerificationService";
+
 class Header extends React.Component {
   state = {
     devClickCount: 0
@@ -26,9 +33,19 @@ class Header extends React.Component {
     }
   }
   onClickButton () {
-    window.location.reload()
   }
   render() {
+    let passengerGeneratedClaims = [
+      SelfiePhotoClaim,
+      FacePrintClaim,
+      DocumentPhotoClaim
+    ]
+    let passengerDid = "did:uport:0x1927362728834372820198283"
+    let klmVerifiedClaims = SubmitPersonalDataToKLMService(passengerDid, passengerGeneratedClaims)
+    let facePrintClaim = klmVerifiedClaims[1]
+    //alert(klmVerifiedClaims[0])
+    console.log(facePrintClaim)
+
     return (
       <Hero.Welcome>
         <br/><br/>
@@ -38,6 +55,7 @@ class Header extends React.Component {
       <img src={dataShareImage} alt="datashare"/>
       </DataShareImage>
          <br/><br/><CapsuleLinkButton onClick="onClickButton" to="/sharepermissions/flights">Agree</CapsuleLinkButton><br/><br/><br/>
+
       </Hero.Welcome>);
   }
 }
