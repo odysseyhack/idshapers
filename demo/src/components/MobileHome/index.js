@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import * as theme from "../shared/theme";
 import { Container, medium } from "../shared/grid";
+import { CapsuleLinkButton } from "../shared/elements";
 import Header from "./Header";
 import ServiceCard from "../shared/ServiceCard";
 import FlightCard from "../shared/FlightCard";
@@ -30,7 +31,8 @@ class PassengerHome extends React.Component {
       </Container>
       </Cards>
       <Cards>
-      <h3 ><br/><br/><br/>MY FLIGHTS</h3><br/><br/>
+      <h3 ><br/>
+      <br/><br/>MY FLIGHTS</h3><br/><br/>
         <Container>
           {Object.keys(SERVICES.PASSENGER_FLIGHTS).map(sid => <FlightCard
             key={SERVICES.PASSENGER_FLIGHTS[sid].id}

@@ -5,11 +5,12 @@ import { large, medium, mediumOnly } from "../shared/grid";
 import * as theme from "../shared/theme";
 import { CapsuleLinkButton } from "../shared/elements";
 import headerImage from "../../images/home-header.svg";
-import uPortLogo from "../../images/uport-logo.svg";
+import uPortLogo from "../../images/airport-logo.png";
 import cityIdIcon from "../../images/city-id-icon.svg";
 import uPortAppIcon from "../../images/uport-app-icon.svg";
 import servicesIcon from "../../images/services-icon.svg";
 import history from "../../utils/history";
+import dataShareImage from "../../images/datashare.png";
 
 class Header extends React.Component {
   state = {
@@ -21,21 +22,31 @@ class Header extends React.Component {
       history.push("/detect");
     } else {
       this.setState({ devClickCount: this.state.devClickCount + 1 });
+   
     }
   }
+  onClickButton () {
+    window.location.reload()
+  }
   render() {
-    return (<Hero>
+    return (
       <Hero.Welcome>
-        <Logo onClick={this.incDevClickCount} src={uPortLogo} />
-        <h2>Welcome to</h2>
-        <h1>PASSENGER APP</h1>
-        <p>Here you can verify your passport, store data, share data and control to whom you share it.</p><br/>
-        <CapsuleLinkButton to="/sharedpermissions">Manage shared data</CapsuleLinkButton><br/>
-         <CapsuleLinkButton to="/sharedata">Share data</CapsuleLinkButton><br/>
-      </Hero.Welcome>
-    </Hero>);
+        <br/><br/>
+        <h1>Data to be shared.</h1><br/><h2></h2>
+        <br/>
+              <DataShareImage>
+      <img src={dataShareImage} alt="datashare"/>
+      </DataShareImage>
+         <br/><br/><CapsuleLinkButton onClick="onClickButton" to="/sharepermissions/flights">Agree</CapsuleLinkButton><br/><br/><br/>
+      </Hero.Welcome>);
   }
 }
+
+const DataShareImage = styled.div`
+  background: ${theme.gradient1};
+  text-align:center;
+`;
+
 
 const Hero = styled.div`
   overflow: hidden;
@@ -44,9 +55,13 @@ const Hero = styled.div`
 Hero.Content = styled.div`
   background: ${theme.gradient1};
   padding: 60px 20px 0;
+  text-align:center;
   color: #fff;
   ${medium("padding: 60px 20vw 0;")}
-
+  img {
+    max-width:400px;
+    text-align:center;
+  }
   h3 {
     font-size: 0.875rem;
     font-weight: 600;
@@ -57,6 +72,11 @@ Hero.Content = styled.div`
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  ${CapsuleLinkButton} {
+    font-size: 1rem;
+    margin-top: 20px;
   }
 
   hr {
@@ -95,8 +115,6 @@ Hero.Step.Icon = styled.img`
 
 `;
 Hero.Welcome = styled.div`
-  background: #B5A9E8 url(${headerImage}) center no-repeat;
-  background-size: cover;
   color: ${theme.homeHeader.textColor};
   padding: 2vh 20px 10vh;
   position: relative;

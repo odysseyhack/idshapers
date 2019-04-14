@@ -36,9 +36,9 @@ const KLM_ENROLLMENT = {
   url: "/selfservice/enrollment",
   claim: "AirportCheckin",
   steps: [
-    "Verify with KLM",
-    "Enter your information",
-    "Get verified"
+    "Login with uPort",
+    "Get verified",
+    "Receive AirportCheckin"
   ]
 };
 
@@ -48,13 +48,13 @@ const FLIGHT_PARIS = {
   // TODO Could be icon from KLM service here https://img.static-fb.com/images/media/EAB48D10-4B9D-4E4B-9AC10451F0B80876
   icon: TransportIcon,
   entity: "KLM Airlines",
-  description: "AMS - CDG KL1243. Check in at the Schipol Airport and get passport-free access within the airport without a need of passport.",
+  description: "AMS - CDG KL1243.",
   url: "/flights/0",
   claim: "Flight Ticket",
   steps: [
-    "Verify with KLM",
-    "Enter your information",
-    "Get verified"
+    "Login with uPort",
+    "Get verified",
+    "Receive Flight Ticket"
   ],
 
   date: "2019-03-31",
@@ -74,7 +74,7 @@ const FLIGHT_BARCELONA = {
   name: "Amsterdam - Barcelona",
   // TODO Could be icon from KLM service here https://img.static-fb.com/images/media/EAB48D10-4B9D-4E4B-9AC10451F0B80876
   icon: TransportIcon,
-  description: "AMS - BCN KL1669. Check in at the Schipol Airport and get passport-free access within the airport without a need of passport.",
+  description: "AMS - BCN KL1669.",
   entity: "KLM Airlines",
   url: "/flights/2",
   claim: "Flight Ticket",
@@ -184,8 +184,8 @@ FLIGHT_BARCELONA.requiredClaims = [FIRST_NAME, LAST_NAME, DATE_OF_BIRTH];
 //FLIGHT_BARCELONA.requiredServices = [PASSENGER_ID];
 FLIGHT_BARCELONA.generatedClaims = [FLIGHT_TICKET_BARCELONA];
 
-KLM_ENROLLMENT.requiredClaims = [PASSENGER_ID];
-KLM_ENROLLMENT.requiredServices = [PASSENGER_ID];
+KLM_ENROLLMENT.requiredClaims = [PASSENGER_ID, FIRST_NAME, LAST_NAME, DATE_OF_BIRTH];
+KLM_ENROLLMENT.requiredServices = [PASSENGER_ID, FIRST_NAME, LAST_NAME, DATE_OF_BIRTH];
 KLM_ENROLLMENT.generatedClaims = [CERTIFIED_PASSPORT];
 
 export default {

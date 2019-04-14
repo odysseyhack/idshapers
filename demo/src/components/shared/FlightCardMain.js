@@ -72,8 +72,8 @@ class FlightCard extends React.Component {
                 </ShareClaims>
               : <ShareClaims>
               </ShareClaims>}
-              <CapsuleLinkButton to="/sharepermissions/revoked" onClick="onClickButton">
-              Revoke data shared</CapsuleLinkButton><br/>
+              <CapsuleLinkButton to="/sharepermissions" onClick="onClickButton">
+              Check-in</CapsuleLinkButton><br/>
               </Issued>
           </Col>
         </Grid>
