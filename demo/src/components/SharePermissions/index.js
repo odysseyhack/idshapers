@@ -11,6 +11,11 @@ import Card from "../shared/PermissionCard";
 import Smile from "./SmileContainer";
 import Flights from "./FlightsContainer";
 import FlightsMain from "./FlightsMain";
+import CameraMain from "./CameraMain";
+import CameraDataReceived from "./CameraDataReceived";
+import CameraDataDeleted from "./CameraDataDeleted";
+import CameraDataVerified from "./CameraDataVerified";
+import CameraDataScan from "./CameraDataScan";
 import Revoked from "./RevokedContainer";
 import SERVICES from "../../constants/sharedpermissions";
 import dataShareImage from "../../images/datashare.png";
@@ -30,6 +35,11 @@ class Home extends React.Component {
           <Route path="/sharepermissions/flights" exact component={Flights} />
           <Route path="/sharepermissions/flightsMain" exact component={FlightsMain} />
           <Route path="/sharepermissions/revoked" exact component={Revoked} />
+          <Route path="/sharepermissions/cameraDataVerified" exact component={CameraDataVerified} />
+          <Route path="/sharepermissions/cameraDataDeleted" exact component={CameraDataDeleted} />
+          <Route path="/sharepermissions/cameraDataReceived" exact component={CameraDataReceived} />
+          <Route path="/sharepermissions/cameraDataScan" exact component={CameraDataScan} />
+          <Route path="/sharepermissions/cameraMain" exact component={CameraMain} />
         </Switch>
       </Container>
     </Wrapper>)
