@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import request from 'superagent'
 
 import { large, medium, mediumOnly } from "../shared/grid";
 
@@ -36,6 +37,13 @@ class Landing extends React.Component {
     // } else if(!isValid(this.props.cityIdClaim).valid) {
     //   this.props.redirectToDiplomaRequirement();
     // }
+    request
+      .get('https://pacific-crag-40714.herokuapp.com/deleteData')
+      .end((err, resp) => {
+        if (!err) {
+          console.log(resp);
+        }
+      });
   }
   onClickButton () {
     window.location.reload()

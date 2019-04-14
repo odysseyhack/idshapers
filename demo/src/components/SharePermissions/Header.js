@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import request from 'superagent'
 
 import { large, medium, mediumOnly } from "../shared/grid";
 import * as theme from "../shared/theme";
@@ -32,8 +33,19 @@ class Header extends React.Component {
     }
   }
   onClickButton () {
-    window.location.reload()
+    console.log('SENDING');
+    request
+        .get('https://pacific-crag-40714.herokuapp.com/sendData')
+        .end((err, resp) => {
+          if (!err) {
+            console.log(resp);
+          }
+        });
+    setTimeout(function () {
+      window.location.reload()
+    }, 10000);
   }
+  
   render() {
     return (
       <Hero.Welcome>
@@ -43,7 +55,7 @@ class Header extends React.Component {
               <DataShareImage>
       <img src={dataShareImage} alt="datashare"/>
       </DataShareImage>
-         <br/><br/><CapsuleLinkButton onClick="onClickButton" to="/sharepermissions/enrolled">Agree</CapsuleLinkButton><br/><br/><br/>
+         <br/><br/><CapsuleLinkButton onClick="onClickButton" to="/sharepermissions/flights">Agree</CapsuleLinkButton><br/><br/><br/>
       </Hero.Welcome>);
   }
 }
