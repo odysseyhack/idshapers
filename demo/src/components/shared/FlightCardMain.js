@@ -13,7 +13,7 @@ import popupIcon from "../../images/popup-arrow.svg";
 
 class FlightCard extends React.Component {
   promptAndRedirect = () => {
-    this.props.navigateToServiceWebsite("/enrollment/revoke", "Self-Service Check-in board");
+    this.props.navigateToServiceWebsite("/sharepermissions/revoke", "Self-Service Check-in board");
   }
   onClickButton () {
     window.location.reload()
@@ -72,7 +72,7 @@ class FlightCard extends React.Component {
                 </ShareClaims>
               : <ShareClaims>
               </ShareClaims>}
-              <CapsuleLinkButton to="/enrollment" onClick="onClickButton">
+              <CapsuleLinkButton to="/sharepermissions" onClick="onClickButton">
               Check-in</CapsuleLinkButton><br/>
               </Issued>
           </Col>
