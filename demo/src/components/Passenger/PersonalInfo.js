@@ -112,7 +112,7 @@ class PersonalInfo extends React.Component {
                 <Col span={6}>
                   <FormGroup>
                     <Label>First Name</Label>
-                    <Textbox
+                    <Textbox disabled
                       value="John"
                       onChange={this.handleChange("firstName")} />
                   </FormGroup>
@@ -121,7 +121,7 @@ class PersonalInfo extends React.Component {
                 <Col span={6}>
                   <FormGroup>
                     <Label>Last Name</Label>
-                    <Textbox
+                    <Textbox disabled
                       value="Doe"
                       onChange={this.handleChange("lastName")} />
                   </FormGroup>
@@ -137,7 +137,7 @@ class PersonalInfo extends React.Component {
                 <Col span={6}>
                   <FormGroup>
                     <Label>Date of Birth</Label>
-                    <input type="date"
+                    <input type="date" disabled
                            className="datepicker"
                            min="1900-01-01"
                            max={dayjs().add(-13, "year").format("YYYY-MM-DD")}
@@ -151,7 +151,7 @@ class PersonalInfo extends React.Component {
                 <Col span={6}>
                   <FormGroup>
                     <Label>Personal ID</Label>
-                    <Textbox
+                    <Textbox disabled
                         value={personalId}
                         onChange={this.handleChange("personalId")} />
                   </FormGroup>
@@ -160,7 +160,7 @@ class PersonalInfo extends React.Component {
                 <Col span={6}>
                   <FormGroup>
                     <Label>Document ID</Label>
-                    <Textbox
+                    <Textbox disabled
                         value={documentId}
                         onChange={this.handleChange("documentId")} />
                   </FormGroup>
@@ -169,7 +169,7 @@ class PersonalInfo extends React.Component {
                 <Col span={5}>
                   <FormGroup>
                     <Label>Document Issued</Label>
-                    <Dropdown
+                    <Dropdown disabled
                         placeholder="Country"
                         value={documentIssuedCountry}
                         onChange={this.handleChange("documentIssuedCountry")}>
