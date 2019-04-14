@@ -30,8 +30,11 @@ class Header extends React.Component {
         <h2>Welcome to</h2>
         <h1>idShapers DEMO</h1>
         <p>Play around.</p>
-        <CapsuleLinkButton to="/mobile" target="_blank">Mobile APP</CapsuleLinkButton><br/>
         <CapsuleLinkButton to="/sharepermissions/flightsmain" target="_blank">Mobile Enrollement</CapsuleLinkButton><br/>
+        <CapsuleLinkButton to="/sharepermissions/cameramain" target="_blank">Camera BackOffice</CapsuleLinkButton><br/>
+        <hr/ >
+        <hr/ >
+        <CapsuleLinkButton to="/mobile" target="_blank">Mobile APP</CapsuleLinkButton><br/>
         <CapsuleLinkButton to="/selfservice" target="_blank">Self Service Check-in Tablet</CapsuleLinkButton><br/>
         <CapsuleLinkButton to="/backoffice" target="_blank">Duty Free Back Office Tablet</CapsuleLinkButton><br/>
       </Hero.Welcome>
