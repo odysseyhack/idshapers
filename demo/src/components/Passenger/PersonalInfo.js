@@ -16,7 +16,7 @@ import {
   Textbox,
   ThemedButton
 } from "../shared/elements";
-// import isValid from "../../utils/validateCityIdInfo";
+
 import COUNTRIES from "../../constants/countries";
 import SERVICES from "../../constants/servicesKlm";
 import SelfiePicture from "../../images/selfie-example.jpeg";
