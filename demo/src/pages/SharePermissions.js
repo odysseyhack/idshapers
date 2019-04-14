@@ -4,11 +4,11 @@ import React from "react";
 import App from "../components/AppContainer";
 import SharePermissions from "../components/SharePermissions";
 
-const SharePermissionsPage = props => {
+const MobileEnrollmentPage = props => {
   return (<App>
     <SharePermissions />
   </App>);
 };
 
-// export default hot(module)(SharePermissionsPage);
-export default SharePermissionsPage;
+// export default hot(module)(MobileEnrollmentPage);
+export default MobileEnrollmentPage;

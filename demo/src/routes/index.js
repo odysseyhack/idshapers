@@ -6,7 +6,7 @@ import MobileHomePage from "../pages/MobileHome";
 import PassengerPage from "../pages/Passenger";
 import SelfServiceHomePage from "../pages/SelfServiceHome";
 import SharedPermissionsPage from "../pages/SharedPermissions";
-import SharePermissionsPage from "../pages/SharePermissions";
+import MobileEnrollmentPage from "../pages/SharePermissions";
 import EnrollmentPage from "../pages/Enrollment";
 import FlightPage from "../pages/Flight";
 import RedirectPage from "../pages/Redirect";
@@ -22,7 +22,7 @@ export default () => (<Router history={history}>
     <Route path="/passenger" component={PassengerPage} />
     <Route path="/selfservice" component={SelfServiceHomePage} />
     <Route path="/selfservice/enrollment" component={EnrollmentPage} />
-    <Route path="/sharepermissions" component={SharePermissionsPage} />
+    <Route path="/sharepermissions" component={MobileEnrollmentPage} />
     <Route path="/flight" component={FlightPage} />
     <Route path="/sharedpermissions" component={SharedPermissionsPage} />
     <Route path="/backoffice" component={BackOfficePage} />

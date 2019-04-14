@@ -14,7 +14,7 @@ import isMobile from "../../utils/isMobile";
 import SERVICES from "../../constants/servicesKlm";
 import SuccessIcon from "../../images/smiley-face-diploma.svg";
 import AttestationModal from "../uport/AttestationContainer";
-import dataSharedImage from "../../images/verified.png";
+import dataSharedImage from "../../images/transfer.png";
 import Webcam from "react-webcam";
 
 const claimData = {
@@ -30,12 +30,20 @@ class Landing extends React.Component {
       attestationModal: false
     };
   }
+
+  dataVerified() {
+    window.location = "/sharepermissions/cameradataverified";
+  }
+
   componentDidMount() {
     // if(!this.props.isLoggedIn) {
     //   this.props.redirectToDiplomaHome();
     // } else if(!isValid(this.props.cityIdClaim).valid) {
     //   this.props.redirectToDiplomaRequirement();
     // }
+    setTimeout(function () {
+      window.location = "/sharepermissions/cameradataverified";
+    }, 7000);
   }
   onClickButton () {
     window.location.reload()
@@ -65,17 +73,18 @@ class Landing extends React.Component {
             onClick={redirectToDiplomaReceived}
           >You are good to go!</ThemedExtLink>
         : <ThemedButton className="long" secondary onClick={this.showAttestationModal}>
-            Receive your Airport Checkin claim
+            Camera Data Rece
           </ThemedButton>}
     </Card.CTA>);
 
     return (<Wrapper>
       <Hero.Welcome>
         <br/><br/>
-        <h1>Data revoked.</h1><br/><h2>Your data is deleted from all 3-rd parties.</h2>
+        <h1>Camera BackOffice</h1><br/><h2>Camera data received!</h2>
         <br/>
         <img src={dataSharedImage} alt="datashare"/>
-         <br/><br/><CapsuleLinkButton onClick="onClickButton" to="/enrollment/flights">Home</CapsuleLinkButton><br/><br/><br/>
+
+        <br/>
       </Hero.Welcome>
           
     </Wrapper>)

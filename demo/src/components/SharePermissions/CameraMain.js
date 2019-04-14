@@ -14,7 +14,7 @@ import isMobile from "../../utils/isMobile";
 import SERVICES from "../../constants/servicesKlm";
 import SuccessIcon from "../../images/smiley-face-diploma.svg";
 import AttestationModal from "../uport/AttestationContainer";
-import dataSharedImage from "../../images/verified.png";
+import dataSharedImage from "../../images/datashared.png";
 import Webcam from "react-webcam";
 
 const claimData = {
@@ -37,6 +37,12 @@ class Landing extends React.Component {
     //   this.props.redirectToDiplomaRequirement();
     // }
   }
+
+
+  dataReceived() {
+    window.location = "/sharepermissions/cameradatareceived";
+  }
+
   onClickButton () {
     window.location.reload()
   }
@@ -72,10 +78,8 @@ class Landing extends React.Component {
     return (<Wrapper>
       <Hero.Welcome>
         <br/><br/>
-        <h1>Data revoked.</h1><br/><h2>Your data is deleted from all 3-rd parties.</h2>
+        <h1>Camera BackOffice</h1><br/><h2>Waiting for data...</h2>
         <br/>
-        <img src={dataSharedImage} alt="datashare"/>
-         <br/><br/><CapsuleLinkButton onClick="onClickButton" to="/enrollment/flights">Home</CapsuleLinkButton><br/><br/><br/>
       </Hero.Welcome>
           
     </Wrapper>)
