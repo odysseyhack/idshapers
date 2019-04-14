@@ -1,7 +1,7 @@
 import { takeEvery, put, call } from "redux-saga/effects";
 
 import { POLL_CHASQUI } from "../constants/actions";
-import createPullerUrl from "../utils/createPullerUrl";
+import createBrokerUrl from "../utils/createBrokerUrl";
 import isJWT from "../utils/isJWT";
 import {
   pollChasquiSuccess
@@ -50,7 +50,7 @@ function* pollClaims(action) {
   // yield put(setLoading(POLL_CHASQUI, true));
   try {
     const { callbackId } = action;
-    const response = yield call(pollUrl, createPullerUrl(callbackId));
+    const response = yield call(pollUrl, createBrokerUrl(callbackId));
     yield put(pollChasquiSuccess(callbackId, response));
   } catch(ex) {
     console.log(ex);
