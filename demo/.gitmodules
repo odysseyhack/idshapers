@@ -1,0 +1,9 @@
+[submodule "uport-connect"]
+	path = uport-connect
+	url = git@github.com:/uport-project/uport-connect
+[submodule "uport-credentials"]
+	path = uport-credentials
+	url = git@github.com:/uport-project/uport-credentials
+[submodule "uport-transports"]
+	path = uport-transports
+	url = git@github.com:/uport-project/uport-transports
