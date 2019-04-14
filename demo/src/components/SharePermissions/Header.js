@@ -11,6 +11,12 @@ import uPortAppIcon from "../../images/uport-app-icon.svg";
 import servicesIcon from "../../images/services-icon.svg";
 import history from "../../utils/history";
 import dataShareImage from "../../images/datashare.png";
+import {
+    SubmitPersonalDataToKLMService,
+    SelfiePhotoClaim,
+    FacePrintClaim,
+    DocumentPhotoClaim,
+} from "../../sagas/klmVerificationService";
 
 class Header extends React.Component {
   state = {
